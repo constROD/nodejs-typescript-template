@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:start": "ts-node-dev --respawn --transpileOnly src/api/index.ts",
+    "clean": "rm -rf build",
+    "build": "tsc",
+    "prod:build": "yarn clean && yarn build",
+    "prod:start": "yarn prod:build && node build/index.js",
+    "prod:deploy": "yarn prod:build && pm2 start --name 'prod:appname' build/index.js",
+    "prod:restart": "yarn prod:build && pm2 restart 'prod:appname'"
+  },
+  "author": "Rodrick Alcantara",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^3.5.3"
+  }
+}
