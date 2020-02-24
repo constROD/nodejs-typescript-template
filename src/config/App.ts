@@ -2,8 +2,8 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 export default {
-  /* APP */
-  APP_NAME: process.env.APP_NAME || 'Dev App',
-  APP_ZONE: process.env.APP_ZONE || 'development',
-  APP_PORT: process.env.APP_PORT || 3001
+  /* API */
+  API_NAME: process.env.API_NAME || 'Rod Development App',
+  API_ZONE: process.env.API_ZONE || 'development',
+  API_PORT: process.env.API_PORT || 3001
 }

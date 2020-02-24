@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:start": "ts-node-dev --respawn --transpileOnly src/api/server.ts",
-    "clean": "rm -rf build",
-    "build": "tsc",
-    "prod:build": "yarn clean && yarn build",
-    "prod:start": "yarn prod:build && node build/server.js",
-    "prod:deploy": "yarn prod:build && pm2 start --name 'prod:appname' build/server.js",
-    "prod:restart": "yarn prod:build && pm2 restart 'prod:appname'"
+    "api:start": "ts-node-dev --respawn --transpileOnly src/api/server.ts",
+    "api:clean": "rm -rf api_build",
+    "api:build": "tsc",
+    "app:build": "yarn api:clean && yarn api:build",
+    "dev:deploy": "yarn app:build && node api_build/server.js",
+    "prod:deploy": "yarn app:build && pm2 start --name 'prod:appname' api_build/server.js",
+    "prod:restart": "yarn app:build && pm2 restart 'prod:appname'"
   },
   "author": "Rodrick Alcantara",
   "license": "ISC",
