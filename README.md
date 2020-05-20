@@ -14,7 +14,7 @@ npm install or yarn
 npm run api:start or yarn api:start
 ```
 
-#### For production it will build api first before deploying it to the server. ####
+#### For production it will build api first before deploying to server. ####
 1. `dev:deploy` - it uses node to run. I used this in my local for testing if the build is success 
 2. `prod:deploy`- it uses node also but with pm2 to run. I used this on my server if no errors occur.
 ```
